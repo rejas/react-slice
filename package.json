@@ -1,11 +1,11 @@
 {
-  "name": "simple-slice",
+  "name": "react-slice",
   "version": "1.1.4",
   "description": "A simple component of a slice created in ReactJS and SVG.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/naush/simple-slice.git"
+    "url": "https://github.com/rejas/react-slice.git"
   },
   "dependencies": {
     "react": "^0.14.3"
@@ -17,15 +17,14 @@
     "@babel/preset-react": "^7.0.0"
   },
   "scripts": {
-    "compile": "babel src/simple-slice.jsx > dist/simple-slice.js",
-    "prepublish": "npm run compile"
+    "compile": "babel src/react-slice.jsx > dist/react-slice.js",
+    "prepublishOnly": "npm run compile"
   },
-  "author": "Li-Hsuan Lung",
+  "author": "rejas",
   "license": "MIT",
   "keywords": [
     "react",
-    "simple",
-    "simple-slice",
+    "react-slice",
     "slice",
     "svg",
     "trigonometry",

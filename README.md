@@ -3,7 +3,7 @@ A simple component of a slice created in ReactJS and SVG.
 
 # Usage
 ```javascript
-<SimpleSlice
+<ReactSlice
   center={64}
   radius={32}
   start={0}

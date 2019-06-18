@@ -1,6 +1,6 @@
 import React from 'react'
 
-class SimpleSlice extends React.Component {
+class ReactSlice extends React.Component {
   toRadian (degrees) {
     return Math.PI * degrees / 180
   }
@@ -58,7 +58,7 @@ class SimpleSlice extends React.Component {
   }
 }
 
-SimpleSlice.propTypes = {
+ReactSlice.propTypes = {
   center: React.PropTypes.number.isRequired,
   radius: React.PropTypes.number.isRequired,
   start: React.PropTypes.number.isRequired,
@@ -72,7 +72,7 @@ SimpleSlice.propTypes = {
   mouseLeave: React.PropTypes.func
 }
 
-SimpleSlice.defaultProps = {
+ReactSlice.defaultProps = {
   color: 'white',
   opacity: 1.0,
   strokeWidth: 1.0,
@@ -80,4 +80,4 @@ SimpleSlice.defaultProps = {
   strokeOpacity: 1.0
 }
 
-export default SimpleSlice
+export default ReactSlice
