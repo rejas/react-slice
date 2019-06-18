@@ -11,7 +11,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var ReactSlice = function ReactSlice(props) {
+var PieSlice = function PieSlice(props) {
   var centerX = props.centerX,
       centerY = props.centerY,
       radius = props.radius,
@@ -61,7 +61,7 @@ var ReactSlice = function ReactSlice(props) {
   })));
 };
 
-ReactSlice.propTypes = {
+PieSlice.propTypes = {
   centerX: _propTypes["default"].number.isRequired,
   centerY: _propTypes["default"].number.isRequired,
   radius: _propTypes["default"].number.isRequired,
@@ -75,13 +75,13 @@ ReactSlice.propTypes = {
   mouseEnter: _propTypes["default"].func,
   mouseLeave: _propTypes["default"].func
 };
-ReactSlice.defaultProps = {
+PieSlice.defaultProps = {
   color: "white",
   opacity: 1.0,
   strokeWidth: 1.0,
   strokeColor: "black",
   strokeOpacity: 1.0
 };
-var _default = ReactSlice;
+var _default = PieSlice;
 exports["default"] = _default;
 

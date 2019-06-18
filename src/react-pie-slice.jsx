@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ReactSlice = props => {
+const PieSlice = props => {
   const {
     centerX,
     centerY,
@@ -72,7 +72,7 @@ const ReactSlice = props => {
   );
 };
 
-ReactSlice.propTypes = {
+PieSlice.propTypes = {
   centerX: PropTypes.number.isRequired,
   centerY: PropTypes.number.isRequired,
   radius: PropTypes.number.isRequired,
@@ -87,7 +87,7 @@ ReactSlice.propTypes = {
   mouseLeave: PropTypes.func
 };
 
-ReactSlice.defaultProps = {
+PieSlice.defaultProps = {
   color: "white",
   opacity: 1.0,
   strokeWidth: 1.0,
@@ -95,4 +95,4 @@ ReactSlice.defaultProps = {
   strokeOpacity: 1.0
 };
 
-export default ReactSlice;
+export default PieSlice;

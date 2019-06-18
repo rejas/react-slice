@@ -1,9 +1,9 @@
-# Simple Slice
+# React Pie Slice
 A simple component of a slice created in ReactJS and SVG.
 
 # Usage
 ```javascript
-<ReactSlice
+<PieSlice
   centerX={64}
   centerY={64}
   radius={32}

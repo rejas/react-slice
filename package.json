@@ -1,7 +1,7 @@
 {
-  "name": "react-slice",
+  "name": "react-pie-slice",
   "version": "1.1.4",
-  "description": "A simple component of a slice created in ReactJS and SVG.",
+  "description": "A simple component of a pie-chart slice created in ReactJS and SVG.",
   "main": "index.js",
   "homepage": "https://github.com/rejas/react-slice#readme",
   "repository": {
@@ -25,14 +25,14 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "babel src/react-slice.jsx > dist/react-slice.js",
+    "compile": "babel src/react-pie-slice.jsx > dist/react-pie-slice.js",
     "prepublishOnly": "npm run compile"
   },
   "author": "rejas",
   "license": "MIT",
   "keywords": [
     "react",
-    "react-slice",
+    "react-pie-slice",
     "slice",
     "svg",
     "trigonometry",

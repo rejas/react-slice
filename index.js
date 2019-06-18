@@ -1,1 +1,1 @@
-module.exports = require('./dist/react-slice');
+module.exports = require('./dist/react-pie-slice');
