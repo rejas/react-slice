@@ -8,7 +8,10 @@
     "url": "https://github.com/rejas/react-slice.git"
   },
   "dependencies": {
-    "react": "^0.14.3"
+    "react": "^16.8.6"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
