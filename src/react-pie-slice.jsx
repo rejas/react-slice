@@ -17,31 +17,31 @@ const PieSlice = props => {
     mouseLeave
   } = props;
 
-  const toRadian = degrees => {
-    return (Math.PI * degrees) / 180;
+  const polarToCartesian = (centerX, centerY, radius, angleInDegrees) => {
+    const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
+
+    return {
+      x: centerX + (radius * Math.cos(angleInRadians)),
+      y: centerY + (radius * Math.sin(angleInRadians))
+    };
   };
 
-  let radians = toRadian(end - start - 90);
-  let destX = centerX + radius * Math.cos(radians);
-  let destY = centerY + radius * Math.sin(radians);
-  let transformation = `rotate(${start} ${centerX} ${centerY})`;
-  let description = [
-    "M",
-    centerX,
-    centerY,
-    "L",
-    centerX,
-    centerY - radius,
-    "A",
-    radius,
-    radius,
-    0,
-    0,
-    1,
-    destX,
-    destY,
-    "z"
-  ].join(" ");
+  const describeArc = (x, y, radius, startAngle, endAngle) => {
+    const start = polarToCartesian(x, y, radius, endAngle);
+    const end = polarToCartesian(x, y, radius, startAngle);
+
+    const arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
+
+    return [
+      "M", start.x, start.y,
+      "A", radius, radius, 0, arcSweep, 0, end.x, end.y,
+      "L", x, y,
+      "L", start.x, start.y
+    ].join(" ");
+  };
+
+  let description = describeArc(centerX, centerY, radius, start, end );
+
   let styles = {
     graph: {
       fill: color,
@@ -57,18 +57,17 @@ const PieSlice = props => {
   };
 
   let gprops = {
-    transform: transformation,
     style: styles.graph,
     onMouseEnter: mouseEnter,
     onMouseLeave: mouseLeave
   };
 
   return (
-    <svg className={props.className}>
-      <g {...gprops}>
-        <path d={description} style={styles.stroke} />
-      </g>
-    </svg>
+      <svg className={props.className}>
+        <g {...gprops}>
+          <path d={description} style={styles.stroke} />
+        </g>
+      </svg>
   );
 };
 
