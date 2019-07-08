@@ -25,15 +25,22 @@ var PieSlice = function PieSlice(props) {
       mouseEnter = props.mouseEnter,
       mouseLeave = props.mouseLeave;
 
-  var toRadian = function toRadian(degrees) {
-    return Math.PI * degrees / 180;
+  var polarToCartesian = function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+    var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+    return {
+      x: centerX + radius * Math.cos(angleInRadians),
+      y: centerY + radius * Math.sin(angleInRadians)
+    };
   };
 
-  var radians = toRadian(end - start - 90);
-  var destX = centerX + radius * Math.cos(radians);
-  var destY = centerY + radius * Math.sin(radians);
-  var transformation = "rotate(".concat(start, " ").concat(centerX, " ").concat(centerY, ")");
-  var description = ["M", centerX, centerY, "L", centerX, centerY - radius, "A", radius, radius, 0, 0, 1, destX, destY, "z"].join(" ");
+  var describeArc = function describeArc(x, y, radius, startAngle, endAngle) {
+    var start = polarToCartesian(x, y, radius, endAngle);
+    var end = polarToCartesian(x, y, radius, startAngle);
+    var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
+    return ["M", start.x, start.y, "A", radius, radius, 0, arcSweep, 0, end.x, end.y, "L", x, y, "L", start.x, start.y].join(" ");
+  };
+
+  var description = describeArc(centerX, centerY, radius, start, end);
   var styles = {
     graph: {
       fill: color,
@@ -48,7 +55,6 @@ var PieSlice = function PieSlice(props) {
     }
   };
   var gprops = {
-    transform: transformation,
     style: styles.graph,
     onMouseEnter: mouseEnter,
     onMouseLeave: mouseLeave

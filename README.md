@@ -63,5 +63,3 @@ mouseEnter: React.PropTypes.func // A callback function to execute when the mous
 ```javascript
 mouseLeave: React.PropTypes.func // A callback function to execute when the mouseleave is fired on a slice.
 ```
-
-# [Example](https://github.com/naush/simple-slice-example)
