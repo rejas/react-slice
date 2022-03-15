@@ -59,9 +59,9 @@ var PieSlice = function PieSlice(props) {
     onMouseEnter: mouseEnter,
     onMouseLeave: mouseLeave
   };
-  return _react["default"].createElement("svg", {
+  return /*#__PURE__*/_react["default"].createElement("svg", {
     className: props.className
-  }, _react["default"].createElement("g", gprops, _react["default"].createElement("path", {
+  }, /*#__PURE__*/_react["default"].createElement("g", gprops, /*#__PURE__*/_react["default"].createElement("path", {
     d: description,
     style: styles.stroke
   })));

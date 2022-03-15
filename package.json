@@ -15,14 +15,14 @@
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "prop-types": "^15.7.2"
+    "react": ">= 16.8",
+    "prop-types": ">= 15.7"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
